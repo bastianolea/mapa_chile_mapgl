@@ -4,6 +4,11 @@ library(shinyjs)
 library(dplyr)
 library(mapgl) # https://walker-data.com/mapgl/
 library(territorial) # https://bastianolea.github.io/territorial/
+library(chilemapas) # https://pacha.dev/chilemapas/
+library(sf)
+
+# convertir mapa chilemapas::mapa_comunas a sf
+mapa_comunas <- sf::st_as_sf(chilemapas::mapa_comunas)
 
 # cargar cajas (bounding boxes) precalculadas para zoom
 caja_region <- readRDS("datos/cajas_regiones.rds")
@@ -71,8 +76,17 @@ server <- function(input, output, session) {
     maplibre(
       center = c(-71.7, -35),
       zoom = 4,
+      minZoom = 4,
+      maxZoom = 14
       # attributionControl = FALSE
-    )
+    ) |>
+      # capa con polígonos
+      add_fill_layer(
+        id = "comunas",
+        source = mapa_comunas, # mapa como objeto sf
+        fill_color = "#965DDD",
+        fill_opacity = 0.2
+      )
   })
 
   # selectores ----

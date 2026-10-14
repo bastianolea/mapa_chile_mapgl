@@ -1,0 +1,12 @@
+name: mapa_chile_mapgl
+title: mapa_chile_mapgl
+username: bastianolea
+account: bastianolea
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a13ae0-ceae-4be0-e586-4c6142959b72
+bundleId:
+url: https://connect.posit.cloud/bastianolea/content/01a13ae0-ceae-4be0-e586-4c6142959b72
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
