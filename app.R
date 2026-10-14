@@ -2,8 +2,8 @@ library(shiny)
 library(bslib)
 library(shinyjs)
 library(dplyr)
-library(mapgl)
-library(territorial)
+library(mapgl) # https://walker-data.com/mapgl/
+library(territorial) # https://bastianolea.github.io/territorial/
 
 # cargar cajas (bounding boxes) precalculadas para zoom
 caja_region <- readRDS("datos/cajas_regiones.rds")
