@@ -1,0 +1,43 @@
+/* panel flotante sobre el mapa */
+.panel-mapa {
+  /* se posiciona encima del mapa en vez de ocupar espacio en la página */
+  position: absolute;
+  /* esquina superior izquierda (el margen lo separa del borde) */
+  top: 0;
+  left: 0;
+  /* queda por encima del mapa */
+  z-index: 10;
+  width: 280px;
+  margin: 18px;
+}
+
+/* espacio vertical entre los elementos del panel (80% del valor de bslib) */
+.panel-mapa .card-body {
+  gap: 0.8rem;
+}
+
+/* pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  .panel-mapa {
+    /* fijar ambos lados con ancho automático hace que ocupe todo el ancho */
+    right: 0;
+    width: auto;
+    margin: 8px;
+  }
+
+  /* relleno interno y espacio entre elementos más compactos */
+  .panel-mapa .card-body {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  /* texto de la descripción más pequeño */
+  .panel-mapa p {
+    font-size: 0.85rem;
+  }
+
+  /* con letra menor a 16px, iOS hace zoom al tocar el selector */
+  .panel-mapa select {
+    font-size: 16px;
+  }
+}

@@ -19,27 +19,18 @@ ui <- page_fillable(
   padding = 0, # app sin bordes
   useShinyjs(), # para ocultar/mostrar elementos
 
-  # css para los selectores dentro de la tarjeta
-  tags$style(
-    ".card:has(#region) {
-      overflow: visible !important;
-    }
-    .card:has(#region) .card-body {
-      overflow: visible !important;
-    }"
-  ),
+  # estilos css
+  includeCSS("estilos.css"),
 
   # mapa
-  mapgl::maplibreOutput("mapa"),
+  mapgl::maplibreOutput("mapa", height = "100%"),
 
   # panel
   card(
-    style = "position: absolute; top: 0; left: 0;
-             width: 280px; height: auto;
-             margin: 18px;",
+    class = "panel-mapa",
     full_screen = FALSE,
 
-    h2("Mapa"),
+    # h2("Mapa"),
 
     markdown(
       "Plantilla de app Shiny hecha en R con un mapa `{mapgl}` y un selector de regiones y comunas de Chile"
@@ -53,6 +44,9 @@ ui <- page_fillable(
     selectInput(
       inputId = "region",
       label = "Región:",
+      width = "100%",
+      # select nativo: en celulares no abre el teclado
+      selectize = FALSE,
       choices = c(
         "País",
         territorial::regiones()
@@ -63,6 +57,8 @@ ui <- page_fillable(
     selectInput(
       inputId = "comuna",
       label = "Comuna:",
+      width = "100%",
+      selectize = FALSE,
       choices = NULL
     ) |>
       hidden(),
