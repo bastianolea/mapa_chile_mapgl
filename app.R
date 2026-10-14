@@ -74,6 +74,7 @@ server <- function(input, output, session) {
   # mapa base ----
   output$mapa <- renderMaplibre({
     maplibre(
+      style = carto_style("voyager"),
       center = c(-71.7, -35),
       zoom = 4,
       minZoom = 4,

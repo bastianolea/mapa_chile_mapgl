@@ -2796,11 +2796,11 @@
     },
     "terra": {
       "Package": "terra",
-      "Version": "1.9-50",
+      "Version": "1.9-46",
       "Source": "Repository",
       "Type": "Package",
       "Title": "Spatial Data Analysis",
-      "Date": "2026-09-08",
+      "Date": "2026-08-21",
       "Depends": [
         "R (>= 3.5.0)",
         "methods"
@@ -2822,8 +2822,7 @@
         "Rcpp"
       ],
       "Imports": [
-        "Rcpp (>= 1.0-10)",
-        "stats"
+        "Rcpp (>= 1.0-10)"
       ],
       "SystemRequirements": "C++17, GDAL (>= 2.2.3), GEOS (>= 3.4.0), PROJ (>= 4.9.3), TBB, sqlite3",
       "Encoding": "UTF-8",
